@@ -43,7 +43,7 @@
 
 # What is your status page called?
 # Shows up in the browser bar and meta tags
-title: Eggsample Status
+title: RecapTime.dev status
 
 # Should posts, which have a publish date
 # from the future, be built? Useful for
@@ -97,7 +97,7 @@ defaultContentLanguage: en
 #
 # Broken example:
 # baseUrl: /
-baseURL: https://example.com
+baseURL: https://status.recaptime.eu.org
 
 # For features like Last modified, you
 # need to use a Git repository. If you
@@ -143,10 +143,15 @@ params:
   # For help, see the wiki:
   # https://github.com/cstate/cstate/wiki/Customization
   categories:
-    - name: North Coast
-      description: The main servers are located here.
-      closed: true
-    - name: Empty Category
+    - name: Websites
+      description: Mostly statically hosted, while others are on third-party services
+    - name: CDN
+      description: Our CDN uses a combination of Cloudflare R2 and Storj DCS to store brand assets, but also user-generated content and release artifacts
+    - name: APIs
+    - name: Third-Party Services
+      description: Third-party services we rely on.
+    - name: Community Services
+      description: Services we host for the community
     - name: Uncategorized
       untitled: true
 
@@ -158,20 +163,18 @@ params:
   # For help, see the wiki:
   # https://github.com/cstate/cstate/wiki/Customization
   systems:
-    - name: Gateway
-      category: North Coast
-    - name: Backup Gateway
-      category: North Coast
-    - name: Website
-      description: The web frontend for the application.
-      category: Uncategorized
-      link: https://example.com/
-    - name: API
-      description: The guts of the application.
-      category: Uncategorized
-    - name: Media Proxy
-      description: This is the service responsible for serving images, audio, and video. It is reliant on our CDN.
-      category: Uncategorized
+    - name: Main Website
+      category: Websites
+      url: https://recaptime.eu.org
+    - name: Vault
+      category: Community Services
+      description: Our Vaultwarden instance, running on Koyeb.
+      url: https://vault.recaptime.eu.org
+    - name: Sourcehut - Hosted instance
+      displayName: Sourcehut
+      description: Sourcehut, the hacker's forge
+      url: https://sr.ht/~recaptime-dev
+      category: Third-Party Services
 
   # What date format to use?
   #
@@ -298,10 +301,9 @@ params:
   # Uncomment to enable.
   #
   # Format:
-  # customTabs:
-  #  -
-  #    name: Name
-  #    link: https://example.com
+  customTabs:
+    - name: Real-time updates, powered by Upptime
+      link: https://upptime.recaptime.eu.org
 
   # Disable complex server-side
   # calculations that may impact
